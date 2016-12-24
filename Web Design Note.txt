@@ -1,0 +1,2122 @@
+Validator: validator.w3.org ---> to check your page that you are using proper code.
+
+-------------------------------------------------------------------------------------
+<!DOCTYPE html>   --> Defines the version of HTML being used. For html 5
+
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!DOCTYPE html PUBLIC "-//w3c//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+------------------------------------------------------------------------------------
+
+Linking a Style-shets
+<link type="text/css" rel="stylesheet" href="xxx.css" />
+atau
+Didalam tag <style> place @import command (Path URL documents)
+
+--------------------------------------
+USE Cascade: external sheets dimix dengan embedded style sheets. Embedded akan override.
+Style yang lebih spesifik akan ovverride yang less spesifik.
+--------------------------------------
+
+-------------- ----------------------------
+Tool tip for LINKS   link
+
+<a href=xxx.pdf" title="download our xxx pdf"> </a>
+
+<a href=http://www.xxx.com"
+to go up a level and link to file in the folder above the current use one. use ../ at the start of the path.
+
+LINK KE SECTION TERTENTU:
+<a href="#end">  link ke    <a name="end">
+<a href="page2.html#end">  --> Link ke page 2 di #end  
+
+
+--------------------------------------------------------
+Download a STOCK IMAGE from the web 
+
+www.istockphoto.com
+www.spiderpic.com
+stock.xchng
+www.sxc.hu
+www.dreamstime.com
+www.fotolia.com
+www.flickr.com(free of charge)
+
+--Creating a cartoon--
+www.pixton.com ---> make your own comic, charges a subscription fee to use its tools.
+
+
+--------------------------------------------------------
+------------------------ Style Sheets -----------------
+-------------------------------------------------------
+
+
+<style type="text/css">
+
+body{
+font-family: x,y,sans-serif;
+font-size: 40%;
+color: #xxxx;
+background-color: ;
+background-image:url("images/x.gif");
+background-repeat: no-repeat/repeat-x/repeat-y;
+background-position:550px 0;  atau mislnya (bottom center;) --->from top edge, left
+}
+
+p{
+line-height: 1.5em;
+text-indent: .74em; ---> recommended em to have it scale with the font automatically.
+text-align: justify/center/left/right;
+width:   px;
+
+text-transform: uppercase/lowercase/capitalize;
+
+h1{
+padding-left/right/top/bottom:(single value for all side/2 value for top-bottom, and right-left/4 value top right bottom left) ;
+margin/margin-top/bottom/right/left: ;
+width:   px;
+border: width? color? style? example 1 px #533204 hidden/none/solid/double/dotted/groove/ridge/inset/outset/dashed;
+
+
+
+Style Multiple Element
+
+h1,h2{
+}
+
+Mengubah suatu bagian tertentu/ bagian dalam bagian
+Di HTML
+<span> 
+</span>
+Di CSS:
+span{
+<!-- CSS Style -->
+}
+
+Group Element
+Di HTML:
+<div>
+</div>
+DI CSS:
+div {
+<!-- CSS Style -->
+}
+
+Bedanya Span digunakan hanya untuk inline element (misal didlm paragraf/h1), Div adalah block-level element (bigger element) misal untuk beberapa paragraf.
+
+------------------
+
+Jika ingin menarget hanya sebagian kecil bagian dr element gunakan class selector.
+CLASSES
+
+di HTML
+<h3 class="zxc"> </h3>
+
+di CSS
+.zxc {
+<!-- CSS Style -->
+}
+------------------------
+
+To avoid FOOTER appear underneath article when sidebar is longer use:
+
+give .footer a rule clear:both;
+Check online: "clearfix" solution.
+
+
+-----
+Apply lebih dari 1 class gunakan space:
+<p class="biography algo"> BIO </p>  ---> Apply class biography dan algo ke tag <p>
+-----
+Kombinasi class dan tag, jadi hanya tag tertentu dari kelas tsb yang dikenai style:
+p.sidebar { color:#FFFFFF; }  --> merubah warna paragraf dari kelas sidebar saja.
+-----
+Select tags inside tags:
+ul li { color:red }   ---> select tag li yang didalam ul saja
+
+harus dimulai dengan huruf , hanya mengandung huruf, underscore, dashes dan number. gabisa ada space. Case Sensitive.
+---------------
+
+License for using a particular font on website.
+www.fontdeck.com
+www.typekit.com
+Free Google Font Services:  www.google.com/fonts
+
+
+Serif: ada thick diujung hurufnya
+Sans-serif: datar
+Slab-serif:thick kotak
+
+hindari comic sans
+
+-----------------------------ID------------------------------------------
+ID selector dapat diapplied hanya pada single tag pada sebuah halaman HTML, Class dapat diapplied pada banyak element.
+Dapat dimulai dengan tanda #.
+
+Di html
+<div id="xcv">
+</div>
+
+Di CSS
+#xcv
+{
+}
+
+Perbedaan ID dan Class: ID harus unik pada sebuah halaman. Class dapat digunakan berulang.
+ID lebih spesifik dari class. Jika pada sebuah halaman ada ID dan Class yang diapplied dengan style yang berbenturan ID punya prioritas lebih tinggi dari Class.
+
+
+----------------------CONTEXTUAL SELECTOR---------------------------------
+Dapat digunakan untuk apply style tertentu pada setiap item dari list yang panjang.
+Menarget elemen pada posisinya dari elemen lain. Seperti ID, Div.
+
+misal narget ID:
+
+#gaya p{
+<!-- narget paragraf dari ID p -->
+}
+
+Contoh lebih kompleks:
+mau apply style pada image didalam paragraf, yang ada didalam DIV dengan ID Content.
+#content p img {
+}
+
+
+-------------------
+PSEUDO-ELEMENTS
+Digunakan pada situasi spesial, Pseudo element dipisahkan dari elemen dengan colon (:)
+
+misal untuk style pada element baris pertama.
+
+--keyword
+text
+font
+
+#gaya p:first-line
+{
+font-weight:bold;
+}
+
+atau
+.intro:first-line
+{
+}
+
+Membuat teks miring: emphasize (em)
+
+
+--------------------
+PSEUDO-CLASSES
+
+Dapat apply sebuah style ke element berdasarkan pada state saat itu.
+biasanya untuk style links pada 5 common states: normal, visited, hover, active, focus.
+
+a:link
+{
+font-weight:bold;
+color:#xxxx;
+
+a:hover
+{
+text-decoration:none;
+} 
+
+dst..
+
+LAINNYA:
+First-child pseudo-classes dapat membuat kita dapat apply style pada element mengikuti sebuah elemen yang telah diapply style tsb.
+
+h2:first-child
+{
+}
+
+tidak diapply ke heading tp ke elemen lain seperti paragraf mengikuti heading.
+
+
+!important;    berguna agar selector tsb di apply style nya pada elemen. atau tidak terganggu oleh
+	      selector lain yang pointnya lebih kuat
+
+contoh:
+p a {font-weight:bold; !important;}
+
+
+--------------------------------
+
+
+---------------------------------FLOAT ELEMENTS-----------------------
+float:left allows the element to float to the left of elements that follow it.
+float:left/right/none
+Float harus di set width nya. begitu juga dengan element yang mengikuti floated elemen tsb.
+
+Contoh:
+#sidebar
+{
+width:150px;
+float:left;
+}
+
+Stop sections from floating
+misal di footer,
+clear:all; atau clear:left/right. to ignore float on particular side.
+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+----------------------------------- ADVANCE POSITIONING --------------------------------------------------------------
+2 Different ways of positioning in HTML: relatively and absolutely
+RELATIVE: Memberitahu browser kemana ini mau terletak. dibandingkan dengan browser akan menaruh ini dimanapun.
+ABSOLUTE: Memberitahu browser kemana ini harus terletak. Biasanya diukur dari atas kiri browser window.
+
+.example
+{
+	position: absolute; top:  ; left: ;
+}
+
+.example
+{
+	position: relative; top:  ; left: ;
+}
+
+position:fixed; akan membuat element tidak bergerak ketika scroll.
+
+
+Bisa terjadi dua element saling bertumpukan:
+Atasi dengan z-index, higher values will be on top.
+.example { z-index: 5;  }
+
+PERCENTAGE POSITIONING
+akan membuat ini dihitung relative terhadap suatu blok.
+misal jika image diletakkan dalam div, akan diukur brdasarkan width dan height dari div.
+
+
+------------------------------------------------------------------------------------------------------------
+
+----------------------------------- CSS 3 ----------------------
+--------------------------------------------------------------------
+Rounded-corners
+	border-radius:  px;
+	border-radius:  px   px   px   px; top-left  top-right   bottom-right   bottom-left
+	border-radius:  px   px;  top-left and bottom-right
+	border-top-left-radius:  px;
+	border-bottom-left-radius:  px; dan lain-lain
+Text Shadows
+	text-shadow: px  px  px  gray;   horizontaloffset-verticaloffset-blur-color
+Box Shadows
+	box-shadow:  ;
+------------------------------
+CSS Framework: www.blueprintcss.org
+	   960.gs
+
+www.w3c.org 
+http://www.w3.org/Style/CSS/
+
+has a full list of capabilities CSS
+
+
+----------------------------------- OVERFLOW --------------------------------------------------------------
+Jika konten melebihi tinggi, maka akan overflow. Akan diletakkan scrollbar.
+
+height:xxx px;
+overflow:auto/visible/hidden/scroll;
+visible: content that doesn't fit in the box flows out of it.
+hidden: crops the content, cut it off at the bottom of the box.
+scroll: adds a scrollbar. Difference with auto is scrollbar appears only when necessary.
+
+
+----------------------------------------------------------------------------------------------
+-----------------------------------PRINTER FRIENDLY PAGES-------------------------------------
+keywords: media style sheets
+
+copy normal style sheets: namai print.css
+To STOP appearing, delete the style declarations and replace with 
+	display:none;
+
+contoh: .advertbox { display:none; }
+
+modify, tambahkan link ke style sheet untuk print page:
+<link type="text/css" rel="stylesheet" href="style/style.css" media="screen"/>  ---> for desktop computer
+
+TAMBAHKAN
+
+<link type="text/css" rel="stylesheet" href="style/print.css" media="print"/>	
+
+BISA JUGA DITAMBAHKAN UNTUK MEDIA LAIN SEPERTI
+
+media="braille"
+media="speech"  untuk speech synthesizers
+media="handhelds"  untuk pocket devices
+
+kalau TIDAK DIDEKLARASIKAN, berarti berlaku untuk semua media.
+bisa juga menggunakan @media rules didalam CSS untuk direct declarations at a particular type of media. (See W3C site)
+--------------------------------------------------------------------------------------------------------------
+
+-----------------------------------TABLE----------------------------------------------------------------------
+<table> --> define table
+	<tr> ---> row
+		<td> --->column
+		</td>
+	</tr>
+</table>
+
+<caption
+align="bottom"
+>
+
+<td
+colspan
+valign="middle"
+align
+rowspan
+>
+-----------------------------------STYLING TABLE-------------------------------------------------------------------
+in CSS
+
+table
+{
+bakground color: #xxxx;
+border: 1px solid #xxxx;
+}
+
+-------------------------------- ADDING BORDER TO INDIVIDUAL CELLS -----------------------------------
+td {
+border:   ;   (border-style:dotted dashed solid)
+}
+
+border-collapse:collapse; ---> cell border widths dont appear doubled.
+
+
+-----------------------------------COMPLEX TABLE-----------------------------------
+rowspan and colspan attribute.
+<td colspan="3"> xxx </td>
+
+Header:
+<th> buat tuker <td> spy jadi header.
+
+
+<td headers="product june"> ---> Reference more than one heading for single cell.
+
+font-weight:normal;  (bold)
+
+-----------------------------------TABLE SECTION---------------------------
+<thead>
+<tbody>
+<tfoot>
+
+--------------Caption and Summaries to Tables--------------
+<table summary="blablabla.">
+<caption> Company phone directory</caption>
+	<tr>
+		<th> </th>
+	</tr>
+
+
+-----------------------------------ACCESSIBLE NAVIGATION--------------------
+Naro navigasi untuk skip ke maincontent.
+
+<div class="container">
+ <a href="#mainSection">Skip Navigation</a> ----> Near the top of the page
+	<!--- Header --->
+
+<div class="content" id="mainSection"> ------> Add a descriptive ID attribute
+	<h1> Welcome to ..... </h1> ----> Main Content
+
+
+-----------------------------------UNORDERED LIST and ORDERED LIST-----------------------------------
+<ul>
+	<li> </li>
+</ul>
+
+<ol>
+	<li> </li>
+</ol>
+
+<dl>				---> definition list
+	<dt> </dt>
+	<dd> </dd>
+</dl>
+
+ul { list-style-type: square;  }
+ol { list-style-type: upper-alpha; }
+
+use images:
+ul { list-style-image: url(images/notes.gif); }
+
+----------------------------------- STYLE LISTS -----------------------------------
+list-style-type.
+unordered lists ---> disc, square, circle, none.
+numbered lists ---> lower-roman, upper-roman, lower-alpha, upper-alpha, decimal, decimal-leading-zero.
+list-style-image:url (path?);
+
+------------Contoh CSS
+ul 
+{
+list-style-type: square;
+}
+
+----------------------------------- NAVBAR / NAVIGATION BAR -----------------------------------
+
+<div class="navbar">
+<ul>
+	<li><a href="">Home</a></li>
+</ul>
+</div>
+
+<ul> unordered list adalah block level element. dimana selalu mulai dengan baris baru. Maka dari itu utk dibuat inline harus.
+
+.navbar ul li {display:inline; }
+
+ul di navbar harus tanpa bullet dan terlihat seperti button.
+.navbar a {
+	padding:  ;
+	color:  ; background-color: ;
+	font-family: ;
+	border-style: outset;   ---> terlihat seperti button menonjol.
+} 
+	border-style: outset; ---> terlihat seperti abis dipencet.
+
+Button memiliki width yang sama dan tanpa garis bawah/underline.
+	text-decoration:none;
+	width: em ;  --> pakai em akan menyesuaikan ukuran button dengan text jika dibesarkan.
+
+
+
+
+
+----------------------------------- FORM ---------------------------------------------
+<form action="xxx.php" method="post"> ---> Path to the file that will process the form. Method get/post
+	
+	<label for="firstname">Name: </label> <input type="text" name="firstname" id="firstname" /> ----> Label and input type. For change size of field use HTML size attribute/ CSS width property. Maxlength. Value.
+		<!-- ID attribute to the field, and a 'for' attribute to the label -->
+
+	<input type="checkbox" name="widgets" value="pilihan_1" id="pilihan_1" checked/> ---> Prechecked
+		<label for="pilihan_1"> Pilihan_1 </label>
+	<input type="checkbox" name="widgets" value="pilihan_2" id="pilihan_2" /> 
+		<label for="pilihan_2"> Pilihan_2 </label>
+
+	<input type="radio" name="status" value=current" id="current" /> ----> Bisa juga dikasi 'checked' attribute. Force user to select one option.
+		<label for="current"> Current customer </label>
+
+---Select---
+<select name="contact" id="contact">
+	<option>Email</option>
+	<option>Phone</option>
+<select>
+
+Untuk select multiple ---> <select multiple name="contact" id="contact" size="3"> ---> select dengan shift/ctrl
+
+
+---Textarea---
+<textarea name="comments" id="comments" rows="" cols=""></textarea>  -----> limit characters by javascript/ Ajax libraries
+
+Sediakan toolbar buat user untuk format text. Free option: CKEditor available download: www.ckeditor.com
+
+---Submit dan Reset Button---
+<input type="submit" value="contact us" /> --->  atau <button> tag
+
+<input type="reset" value="Reset" /> --->  
+
+
+
+----Organize Form WIth Fieldset---
+<fieldset>
+	<legend>Contact Information</legend> ---> Add descriptive text about the set
+</fieldset>
+
+</form>
+
+----REFERENCE-----
+HTML ENTITIES
+
+<strong>  --> bold
+<blockquote>  --> mark-up a paragraph-length quote, or kutipan dari web  lain
+<hr>  --> horizontal line     bisa ditambah attribute, misal: width=""
+
+&copy;  --> copyright
+&nbsp;  --> non breaking space
+&amp;  --> ampersand
+&lt;  dan &gt;  --> and     contoh: &lt;p&gt;  ---> <p>
+&quot;  ---> speech marks
+
+
+----HTML5 INPUT-----
+email address box: email
+website address box: url
+phone number box: tel
+date box: date
+
+-----Whats New in HTML5-----
+Semantic elements adalah, mengganti <div> dengan sebutan element langsung seperti <header> <footer> dll....
+<header>
+<aside> -->sidebar
+<article> -->article starts here
+	<div class="pullquote"></div>
+</article> 
+<nav>
+<section>
+<footer>
+
+predate of IE dont handle these well, need to add some code to make them compatible.
+http://code.google.com/p/html5shiv
+
+
+HTML Tutorial Online: www.ineasysteps.com
+HTML validator: http://validator.w3.org
+---------------------------------------------------------------------------------------------------------
+
+------------------------------------ INCLUDE EXTERNAL FILES ---------------------------------------------
+
+<?php
+	include("navigation.html");
+?>
+
+
+---------------------------------------------------------------------------------------------------------
+
+------------------------------------ CREATE OWN PHP FUNCTIONS ---------------------------------------------
+
+Begin with 'function' keyword, name of the function and a pair of parentheses '()', code for function enclosed in
+curly braces {}, pass arguments to the function by creating variables within (), send value out of the function
+using 'return' keyword.
+
+function xxx()
+{
+}
+
+echo xxx();
+
+
+---------------------------------------------------------------------------------------------------------
+
+------------------------------------ DREAMWEAVER --------------------------------
+
+Insert image psd file to dreamweaver. Saves a copy as jpg, gif or png.
+Click Images:Image --> select file
+
+Edit photoshop image in dreamweaver ---> Properties panel, click edit button. File, Save, ada indikator gambar telah modified, CLick update from original.
+
+---------- Modify CSS ----------
+Click element, CLick current, click value, add property, set value.
+
+------- Add New Styles ----------
+Click element, Di Css panel-click new CSS Rule button, dst..
+
+Managing file in dreamweaver, go to:
+----- Site Definition ---
+Site -> Definition 
+
+Look Site Map in Dreamweaver.
+
+
+------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+--------------------------------------------JAVASCRIPT-------------------------------------------------------------
+Tell website visitor who DONT HAVE javacript what they missing, put a message between 
+	<noscript> and </noscript> tags.
+It'll be presented when javascript isnt available.
+
+
+Writing into an alert box, using window.alert().
+•Writing into the HTML output using document.write().
+•Writing into an HTML element, using innerHTML.
+•Writing into the browser console, using console.log().
+
+JavaScript statements are composed of:
+
+Values, Operators, Expressions, Keywords, and Comments.
+
+var length = 16;                               // Number
+var lastName = "Johnson";                      // String
+var cars = ["Saab", "Volvo", "BMW"];           // Array
+var x = {
+firstName:"John", 
+lastName:"Doe"
+};    // Object 
+
+
+Object : Car     |    objects can contain many values. -->   var car = {type:"Fiat", model:"500", color:"white"}; 
+
+Properties : car.name = Fiat
+
+Methods : car.stop()   |  fullName : function() { return this.firstName + " " + this.lastName;  }
+
+
+document.getElementById("demo").innerHTML =
+person.firstName + " " + person.lastName;
+
+---
+example:
+
+<p id="demo">Display the result here.</p>
+<script>
+var person = {
+    firstName: "John",
+    lastName : "Doe",
+    id       : 5566,
+    fullName : function() {
+       return this.firstName + " " + this.lastName;
+    }
+};
+
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+-----------
+LOCAL VARIABLE : Declare variable within function.
+example:
+
+function myFunction() {
+    var carName = "Volvo";
+}
+
+GLOBAL VARIABLE: variable declared outside a function.
+
+example:
+var carName = "Volvo";
+myFunction();
+
+function myFunction() {
+    document.getElementById("demo").innerHTML =
+    "I can display " + carName;
+}
+
+AUTOMATICALLY GLOBAL : assign a value to a variable that has not been declared.
+
+example:
+myFunction();
+document.getElementById("demo").innerHTML =
+"I can display " + carName;
+
+function myFunction() {
+    carName = "Volvo";
+}
+
+
+
+
+EMBED: 
+didalam 
+	<head>
+	<script type="text/javascript">
+		alert('Hello');
+	</script>
+	</head>
+-----
+EXTERNAL JAVASCRIPT FILE:
+give it a .js extension.
+website will load more quickly if add external javascript at bottom of HTML file before </body>
+	<script src="alertbox.js" type="text/javascript"> 
+	</script>
+			----> in alertbox.js berisi
+				alert('hello!');
+-----
+ADD EXTERNAL JAVASCRIPT ON SOMEBODY ELSE SERVER:
+	<script src="http://www.example.com/alertbox.js" type="text/javascript"></script>
+		
+----
+Menulis FUNCTION: 
+
+function name(parameter1, parameter2, parameter3) {
+     code to be executed
+} 
+
+var y = new String("John");  //string defined as objects --> recommended
+
+var x = myFunction(4, 3);        // Function is called, return value will end up in x
+
+function myFunction(a, b) {
+     return a * b;                // Function returns the product of a and b
+ }
+function welcome()
+{
+alert('Hello! Sean\'s');
+}
+
+
+
+
+
+<p id="demo"></p>
+<script>
+function myFunction(a, b) {
+    return a * b;
+}
+document.getElementById("demo").innerHTML = myFunction(4, 3);
+</script>
+
+
+--------------------
+SHOWING AND HIDING CONTENT:
+<div id="box1">Optional Box</div>
+	<h2 onClick="show('box1');">How can i apply?</h2>
+
+ADD javascript FUNCTION:
+function show(whichdiv)
+{	document.getElementById(whichdiv).style.display="block"; }   ---> visible style
+function hide(whichdiv)
+{	document.getElementById(whichdiv).style.display="none"; }   ---> invisible
+
+<body onLoad="hide('box1');">
+
+---------------------
+CHANGE PROPERTY FROM DISPLAY TO WHATEVER YOU WANT
+example:
+	document.getElementById(whichdiv).style.color="#xxxx";
+	document.getElementById(whichdiv).style.border='8px black solid';   --> make a thick black border appear around an element
+
+--------------
+
+example another function:
+function hideDiv()
+{
+	
+	document.getElementById("specials").style.visibility="hidden";
+}
+
+-------------------------
+ADD TOGGLE ROUTINE
+keyword: form validation javascript.
+
+conditional statements structured:
+	if(test to be done)
+		{instruction to carry out if condition satisfied}
+	else
+		{instruction to carry out if condition isn't satisfied}
+
+example:
+
+function toggle(whichdiv)
+{
+	if ( document.getElementByIdwhichdiv).style.display=='block')   ---> uses two equal signs '==' when it's checking whether something is true.  one equals '=' when its changing something to be equal to something else.
+	{ document.getElementByIdwhichdiv).style.display='none'; }
+	else
+	{ document.getElementByIdwhichdiv).style.display='block'; }
+}
+
+another example:
+
+FAQ PAGE:
+<html>
+<head>
+	<script type="text/javasript">
+	function show(whichdiv)
+	{  document.getElementById(whichdiv).style.display='block'; }
+	
+	function hide(whichdiv)
+	{  document.getElementById(whichdiv).style.display='none'; }
+
+	function toggle(whichdiv)
+	{
+	if (document.getElementById(whichdiv).style.display='block')
+	{ document.getElementByIdwhichdiv).style.display='none'; }
+	else
+	{ document.getElementByIdwhichdiv).style.display='block'; }
+	}
+	</script>
+</head>
+<body onLoad="hide('answer1');hide('answer2');">
+	<h1> FAQ </h1>
+	<h2 onClick="show('answer1');">How can i apply?</h2>
+	<div id="answer1">To apply ... </div>
+
+	<h2 onClick="show('answer2');">How can i ...?</h2>
+	<div id="answer2">To apply ... </div>
+
+	<h2 onClick="toggle('togglebox');">Click me to toggle</h2>
+ 	<div id="togglebox">show/hide by click this ... </div>
+
+</body>
+</html>
+
+
+
+------------------------------------------------
+PUT IN THE HEADER or in External file.
+
+object "Style" allows us untuk modify CSS Property. contoh lain: style.background-color="red";
+
+object tersebut harus dipanggil agar dapat berjalan. Bisa via load web pages, clicking, mouse over. dll.
+
+Contoh cara Call function pada events. function ter-eksekusi.
+<a href="javascript:void" onclick="hideDiv()">Hide that sentence</a>
+
+keterangan: javascript:void memberitahu browser untuk ignore href attribute ketika diklik. Bisa juga dengan tanda '#' tapi bs jadi reload. javasript:void is safer.
+
+
+---------------------------
+JAVASCRIPT EVENTS/USER ACTION
+-------------------------------------------------
+onMouseOver: mouse rolls over something
+onMouseOut: mouse pointer rolls away again
+onClick:
+onFocus: user enter a form field
+onBlur: user moves away from a form field
+onChange: user change a form field, such as choose a radio 
+onLoad: page loads  --> should only be added to the body tag
+onUnload:  user goes to different page --> should only be added to the body tag
+-----------------------------------------------------
+Example responding to user action:
+
+<p onclick="welcome();">Click the paragraph!</p>
+when somebody click the paragraph, the welcome() function will be executed
+
+other example
+
+<a href="books.htm" onMouseOver="openmenu();" onMouseOut="closemenu();">Books</a>
+
+<button onclick='getElementById("demo").innerHTML=Date()'> </button>
+
+
+CODE changes the content of its OWN element (using this.innerHTML): 
+example: 
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+
+<button onclick="this.innerHTML=Date()">The time is?</button>
+function displayDate() {
+    document.getElementById("demo").innerHTML = Date();
+}
+
+--------------
+DISABLE the link destination:
+href="javascript:;"
+
+-----------
+USE TIMER to trigger action.
+use the setTimeout() command. with the length of delay in miliseconds.
+example: setTimeout('welcome();',1250);
+----------
+
+-----------------------
+
+STRING METHOD
+
+Method      Description
+
+
+charAt() 	Returns the character at the specified index (position) 
+charCodeAt() 	Returns the Unicode of the character at the specified index 
+concat() 	Joins two or more strings, and returns a copy of the joined strings 
+fromCharCode() 	Converts Unicode values to characters 
+indexOf() 	Returns the position of the first found occurrence of a specified value in a string 
+lastIndexOf() 	Returns the position of the last found occurrence of a specified value in a string 
+localeCompare() Compares two strings in the current locale 
+match() 	Searches a string for a match against a regular expression, and returns the matches 
+replace() 	Searches a string for a value and returns a new string with the value replaced 
+search()	 Searches a string for a value and returns the position of the match 
+slice() 	Extracts a part of a string and returns a new string 
+split() 	Splits a string into an array of substrings 
+substr()	 Extracts a part of a string from a start position through a number of characters 
+substring()	 Extracts a part of a string between two specified positions 
+toLocaleLowerCase() Converts a string to lowercase letters, according to the host's locale 
+toLocaleUpperCase() Converts a string to uppercase letters, according to the host's locale 
+toLowerCase() 	Converts a string to lowercase letters 
+toString() 	Returns the value of a String object 
+toUpperCase() 	Converts a string to uppercase letters 
+trim() 		Removes whitespace from both ends of a string 
+valueOf() 	Returns the primitive value of a String object 
+
+---------------------
+INDEX OF METHOD
+<p id="p1">Aku fahmi </p>
+<button onclick="myFunction()"> </button>
+function myFunction() {
+    var str = document.getElementById("p1").innerHTML;
+    var pos = str.indexOf("fahmi");
+    document.getElementById("demo").innerHTML = pos;
+}
+
+SLICE METHOD
+ANOTHER EXAMPLE:
+var str = "Apple, Banana, Kiwi";
+document.getElementById("demo").innerHTML = str.slice(7,13);   ---> Banana
+
+
+CONCAT
+var text1 = "Hello";
+var text2 = "World!";
+document.getElementById("demo").innerHTML = text1.concat(" ",text2);
+
+EXTRACTING STRING
+var str = "HELLO WORLD";
+document.getElementById("demo").innerHTML = str.charAt(3);
+
+TOSTRING()
+use the toString() method to output numbers as base 16 (hex), base 8 (octal), or base 2 (binary).
+function myFunction() {
+    var myNumber = 128;
+    document.getElementById("demo").innerHTML = "128 = " + 
+    myNumber + " Decimal, " +
+    myNumber.toString(16) + " Hexadecimal, " +
+    myNumber.toString(8) + " Octal, " +
+    myNumber.toString(2) + " Binary."
+}
+
+----- JAVASCRIPT LOOP -----
+•for - loops through a block of code a number of times
+•for/in - loops through the properties of an object
+•while - loops through a block of code while a specified condition is true
+•do/while - also loops through a block of code while a specified condition is true
+
+----- JAVASCRIPT DATA TYPES ----
+In JavaScript there are 5 different data types that can contain values:
+•string
+•number
+•boolean
+•object
+•function
+
+There are 3 types of objects:
+•Object
+•Date
+•Array
+
+And 2 data types that cannot contain values:
+•null
+•undefined
+
+----- JAVASCRIPT REGULAR EXPRESSION ----
+A regular expression is a sequence of characters that forms a search pattern.
+When you search for data in a text, you can use this search pattern to describe what you are searching for
+
+
+----- JAVASCRIPT DEBUGGING ----
+Activate debugging in your browser with the F12 key, and select "Console" in the debugger menu.
+
+<script>
+a = 5;
+b = 6;
+c = a + b;
+console.log(c);
+</script>
+
+----- JavaScript Use Strict -----
+
+With strict mode, you can not, for example, use undeclared variables.
+Using a variable without declaring it, is not allowed.
+
+-------------------
+JAVASCRIPT FORM VALIDATION
+script online: search "form validation JavaScript"
+
+CHECKING TEXTBOXES
+example:
+
+<input type="text" id="name" onBlur="validatename();">
+
+function validatename()
+{
+if (document.getElementById('name').value.length<1)
+{ alert('Name is Blank'); }
+}
+
+---> other example
+
+if (document.getElementById('name').value.toLowerCase()=='karen')
+{ alert('Hello Karen'); }
+
+
+toLowerCase converts whatever is entered into the box to lower case before it is tested. 
+
+MORE FORM TEST-----
+CHECK @ symbol in email.
+if (document.getElementById('email').value.toLowerCase().indexOf('@')==-1)    ----> Check whether the @ sign is in that content. It gives the number -1 if it isn't because numbers start at zero.
+{ alert ('Email addresses must have an @');  }
+
+-----------------------
+OTHER TEST:
+check whether a checkbox has been thicked?
+
+if (document.getElementById('options').checked==true)   ---> radio button (selected="true")
+{ }
+
+-------------------------
+CUSTOMIZING BY DATE 
+keyword: javascript date
+
+function the_date()
+{ today=new Date();temp=today.getDate();return temp; }    ----> 1-31
+
+function the_month()
+{ today=new Date();temp=today.geMonth();return temp; }   ----> 0-11
+
+function the_day()
+{ today=new Date();temp=today.getDay();return temp; } ----> 0 sunday-6 saturday
+
+function the_hour()
+{ today=new Date();temp=today.getHour();return temp; }   ----> 24 hour
+
+Display messages based on the time:
+
+if (the_hour()<12) { alert('Good Morning!'); } else
+if (the_hour()<18) { alert('Good Afternoon!'); } else
+alert('Good evening');
+
+
+------ARRAY in Javascript
+
+You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array
+
+------
+Multiple Checking:
+
+if (the_day()=6 || the_day()==0) { alert('It\'s the weekend'); }
+&&
+
+comparison:
+== Equal to
+!= Not equal to
+>
+<
+>=
+<=
+----------
+UPDATING HTML CONTENT ON SCREEN
+document.getElementById('msgs').innerHTML='Errormessage';  ---> mengganti div dengan error message
+				innerHTML+='Errormessage'
+
+------------------------
+Open NEW WINDOW
+
+window.open('page atau url', 'windowname', 'options');
+
+example: 
+window.open('terms.html', 'termswindow', 'width=500, height=400,scrollbars=1,status=0,menubar=0');  --> 1 represents yes, 0 no.
+
+    OPTION      |   What It Means
+width  	 	|     in pixel
+height		|     in pixel
+top		|  position relative to top (px)
+left		|  position relative to left (px)
+location 	|  whether to show address bar. back,forward, and stop button
+toolbar		|  whether to display toolbar. IE: Tools menu and favorites. Firefox: back, forward, stop.
+menubar		|  whether show menubar (File, edit, etc)
+status		|  status bar at bottom?
+resizeable	|  user may resize?
+scrollbars	|  scrollbar shown? (Safari always shown)
+
+or use HTML:  <a href="" target="_blank"></a>  --> Dont mind about the size and the button.
+
+---------------------------
+ADDING RANDOM CONTENT
+  make website more dynamic with it. example: random tip, joke, or call attention special offers.
+  use ARRAY.
+
+---Javascript:
+function tip_setup()
+{
+tips=new Array();
+tips[0]='First tip';
+tips[1]='Second tip';
+tips[2]='Third tip';
+var chosenone=Math.floor(Math.random() *tips.length);
+document.getElementById('tip') .innerHTML=tips[chosenone];
+}
+
+then add an empty <div> section.
+<div id="tip"></div>
+
+
+DONT FORGET TO trigger the tip_setup() function when the web page loads to the <body> tag.
+<body onLoad="tip_setup();">
+
+
+---------------------------
+----ADD PHOTO SLIDESHOW.
+
+can use for display pages of book, presentation slides dll.
+
+ADD HTML where you want to shown.
+<form>
+<img src="1.jpg" id="slideshow" alt="Photo slideshow"
+<p>
+<input type="button" value="<-- Previous Photo" onClick="newSlide(-1) ">
+<input type="button" value="Next Photo -->" onClick="newSlide(1) ">
+</p>
+</form>
+
+ADD CODE between <head> and </head> tags.
+<script type="text/javascript" >
+thisImg = 1;
+imgCt = 10;     		-----> Change the number imgCt to be the number of last photo.
+function newSlide(direction)  
+{
+thisImg = thisImg + direction;
+if (thisImg == 0 ) {thisImg = imgCt; }
+if (thisImg == imgCt+1) {thisImg = 1; }
+document.getElementById('slideshow').src = thisImg +'.jpg';
+}
+</script>
+
+---------------------------
+--------JQUERY
+javascript library or framework.
+visit: http://jquery.com and download the library.
+
+2 versions: 
+-Development version: if we want to edit.
+-Minified version: all spaces squeezed out. hard to edit. smaller size.
+
+To ADD THE LIBRARY, use code:
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>   --> .min indicates the minified version.
+
+----------
+OTHER TIP:
+We can download the jQuery library from Google's server into web page.
+Maybe visitor has cached from previous browsing. It can speed up our site.
+---https://developers.google.com/speed/libraries/devguide#jquery
+
+
+--------------
+QUICK JQUERY EXAMPLES
+*Toggle Button
+ use jquery to add  simple show/hide toggle button.
+
+--HTML
+<div id="terms"> ..Text Goes Here.. </div>
+
+use scrolling visual effect called "slide" in jquery.
+
+--jQUery code:
+$(document).ready(function()
+{
+$('<input type="button" value="Show/hide terms" id="termsbutton">').insertBefore('#terms');
+$('#termsbutton').click(function() { $('#terms').slideToggle(); } );
+$('#terms').hide();
+});
+
+---------------------------
+JQUERY UI
+www.jqueryui.com
+
+provide lots of user interface components, such as tabs, input sliders, and progress bars.
+Add Jquery UI to HTML sebagai tambahan jQuery, download dan add keHTML dengan <script> tag.
+
+ADD DATEPICKER:
+$(document).ready(function()
+{
+$(function() {$(  '#datebox'  ).datepicker({}); });
+});
+
+HTML required is:
+<input type="text" id="datebox">
+
+
+
+Informasi lain untuk Javascript object dapat ditemukan di: HTML, XHTML, and CSS: Your visual blueprint for designing effective web pages (Wiley, 2008).
+
+
+------------------------------------------------------------------------------------------------------------
+-------------------------------SPRY-------------------------------------------------------------------------
+Ajax Framework dr Adobe.
+Use Spry almost no code if use dreamweaver. krn udah include di program.
+
+-------------------------------CALENDAR CONTROL WITH YUI-------------------------------
+Freely available at http://developer.yahoo.com/yui
+bisa juga dengan link ke JavaScript files yang dibutuhkan dengan src attribute pada <script> tag.
+
+Contoh penggunaan calendar dengan link(remote file):
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.1/build/calendar/assets/skins/sam/calendar.css">
+
+<script src="http://yui.yahooapis.com/2.8.1/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="http://yui.yahooapis.com/2.8.1/build/calendar/calendar-min.js"></script>
+
+didalam body:
+<div class="yui-skin-sam">
+<div id="callContainer"></div>
+</div>
+
+<script type="text/javascript">
+var cal1 = new YAHOO.widget.Calendar("callContainer");
+cal1.render();
+</script>
+
+--------------------
+cara kalau mau customize calendar dengan konfigurasi file di JavaScript.
+Calendar appearance controlled via CSS-nya.
+lihat deskripsi settingnya di: http://developer.yahoo.com/yui/calendar
+
+
+
+</style>
+
+
+------------------------------------------------------------------------------------------------
+--------------------------------ADOBE FLASH-----------------------------------------------------
+
+Shape-Fill-Modify-Convert to Symbol.
+
+Right CLick--create motion tween (by default a tween lasts for 24 frame)--you can click and drag the tween--(ctrl+enter).
+
+You can complete control the movie through ActionScript(Scripting Language).
+
+Publish:
+File-Publish Settings-remove check mark HTML-publish.
+
+
+------ CREATE FLASH ANIMATION --------
+Misal: mau buat kapal berlayar di laut.
+
+- Use rectangle tool. create a box for the sky. 
+- Change the fill color, misalnya ke linear gradient. Sesuaikan warna.
+- Double click layer 1 on timeline and rename it.
+- Click new layer. Rename.
+- add another object. (Misalnya circle untuk matahari)
+- Layers yang diatas akan menutupi yang dibawahnya.
+- Click insert on the menu. Choose new symbol. (misal: boat)
+- Make it a movie clip.
+- Draw your object, bisa gabungan antara bbrp bentuk shape. 
+- On the timeline, right click in frame 20. Choose insert keyframe.
+- Make some changes in frame 20.
+- Add new keyframe at frame 40. try dont make any change here
+
+- Add new layer (boat). CLick the layer on timeline. In the library panel, click boat symbol and drag to the stage.
+- Right click boat on stage, choose create motion tween. Click on the boat, drag it through the stage to other side.
+- Ctrl + Enter. 
+
+To minimize the size, reuse the symbol.
+
+
+
+--------------------------------
+Insert in Dreamweaver: 
+Insert panel in the right-click media-swf-select file-ok.
+
+------------------------
+ADD FLASH VIDEO Using Flash:
+
+Open Components Panel(right center)-open video folder-drag the FLVPlayback 2.5 component to the stage--
+click the pencil icon (source)-browse file-ok-ctrl+enter---play.
+
+Change skin: clicking pencil icon(skin)-choose.
+
+Publish to create swf. Upload the SWF File, Container of HTML files, and the FLV/F4V Video.
+
+----------------------------------------------------------
+You must encode video at least two different formats for it to work. karena ngga semua sudah support HTML5
+
+codec? which video is encoded.
+http://diveintohtml5.info/video.html
+
+<video src="pr6.webm" width="320" height="240"></video>
+
+<video src="pr6.webm" width="320" height="240" controls></video> ----> jika ingin menampilkan controls
+
+-----------------------
+ PRELOAD and AUTOPLAY
+
+Preload: The preload attribute tells the browser that you would like it to start downloading the video file as soon as the page loads.
+         This makes sense if the entire point of the page is to view the video. On the other hand, if it’s just supplementary material that only a few visitors will watch, 
+	 then you can set preload to none to tell the browser to minimize network traffic.
+
+<video src="pr6.webm" width="320" height="240" preload="none"></video>
+
+<video src="pr6.webm" width="320" height="240" autoplay></video>
+
+
+  <source src="pr6.mp4"  type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+  <source src="pr6.webm" type="video/webm; codecs=vp8,vorbis">
+  <source src="pr6.ogv"  type="video/ogg; codecs=theora,vorbis">
+
+
+Untuk di IE 8 belum support tag HTML5 <video> sepenuhnya maka digunakan tag <object> didalam <video> untuk menanggulanginya.
+
+<object width="320" height="240" type="application/x-shockwave-flash"
+    data="flowplayer-3.2.1.swf">
+    <param name="movie" value="flowplayer-3.2.1.swf" />
+    <param name="allowfullscreen" value="true" />
+    <param name="flashvars" value="config={'clip': {'url': 'http://wearehugh.com/dih5/pr6.mp4', 'autoPlay':false, 'autoBuffering':true}}" />
+    <p>Download video as <a href="pr6.mp4">MP4</a>, <a href="pr6.webm">WebM</a>, or <a href="pr6.ogv">Ogg</a>.</p>
+ </object>
+
+<script>
+  var v = document.getElementById("movie");
+  v.onclick = function() {
+    if (v.paused) {
+      v.play();
+    } else {
+      v.pause();
+    }
+  };
+</script>
+
+
+------ ANOTHER WAY ADD VIDEO -----
+Using youtube and embed. 
+Tapi akan berisi iklan youtube.
+
+------ ADD AUDIO USING FLASH ------
+
+- In components panel, find the button. Click and drag. In properties panel, chenge label to play/stop music.
+- Open code snippets panel. Find the snippet for play/stop sound. Double click on the play sound snippet.
+- Actions panel open
+- Edit the path and filename for the mp3 file. misalnya: happy.mp3
+- Test (ctrl+enter)
+- Publish. Copy the code in HTML file.
+
+
+
+------------------------------------------------------------------------------------------------
+--------------------------------ADOBE MEDIA ENCODER---------------------------------------------
+
+
+Convert Video using Adobe Media Encoder:
+Add-browse file-click format drop down select flv/f4v -> start queue.
+
+Match source: Choose size and quality. Usually 320x240 tau 512x288.
+
+------------
+-Open flash, create new document.
+-Open components panel(window menu). Find the flv playback in the video folder. click drag to stage,
+-click video player on stage, open its properties, click beside source to add name and folder.
+-File --> Publish.
+-We can copy the code in HTML page that flash generates.
+
+
+------------------------------------------------------------------------------------------------
+--------------------------------SEND EMAIL WITH PHP---------------------------------------------
+
+<form method="post" action="sendemail.php">
+	<fieldset>
+		<legend>Send Email</legend>
+		<p><label for="subject">Subject:</label><input type="text" id="subject" /></p>
+		<p><label for="message">Message:</label><textarea id="message" name="message" rows="5" cols="40"> </textarea></p>
+		<p>>input type="submit" value="Send Message" /></p>
+	</fieldset>
+	
+
+New Document:
+
+<body>
+<?php
+
+mail("xxx@mail.com", $_POST['subject'], $_POST['message']);
+
+?>
+
+<p> your message has been sent </p>
+
+</body>
+
+
+-------------Test the email page locally?
+You can download SMTP Program to test the page locally.
+www.robhuddleston.com/index.cfm/2008/7/27/Setting-up-a-local-email-testing-server
+
+----------------
+----------------------------------------------------------------------------------------------------
+-------------------------------------WORK WITH DATABASE---------------------------------------------
+MySQL dan PHP
+
+More detail about this: The PHP6 & MyQL Bible(Wiley, 2009)
+
+
+-----CONNECT PHP TO DATABASE----
+Three arguments:the address to the server, the username, the password.
+
+<?php
+mysql_connect('localhost','root');
+mysql_select_db('dbsatu');  --->the name of database
+?>
+
+----KEEP IT SAFE
+*karena file ini berisi username dan password, untuk keamanan move file tsb keluar dari root folder. 
+Bisa diletakkan diatas root folder. Karena web server tdk punya akses ke file diluar root.
+Tetapi PHP dengan fungsi include tetap dapat mengakses file tsb. 
+
+
+<?php
+
+include("../dbconnect.php");
+$query = "SELECT field1, field2 FROM table1";
+$data = mysql_query($query);    ----> merujuk pada variabel yang ada query diatasnya (pass variable).
+
+?>
+
+Jika ingin more than 1 query, pastikan nama variable nya beda.
+Run each query secara terpisah juga, dengan (mysql_query) function.
+
+-------
+Display content.
+
+<?php
+	while($row = mysql_fetch_array($data, MYSQL_ASSOC))    ----> data converted into an array, MYSQL_ASSOC command tells the function to create the array using the field names.
+	{
+	   echo "<p>";
+	   echo $row['firstName'] ." ";
+	   echo $row['lastName'] ." ";
+	   echo $row['email'];
+	   echo "</p>";
+	}
+?>
+
+--------- SEARCH THE DATABASE ---------
+searchform.php
+<form method="post" action="searchaction.php">   ---> in action replace with the path to a PHP document.
+   <label for="search"> Search: </label>
+   <input type="text" name="search" id="search" />
+   <input type="submit" value="Search" />
+</form>
+
+
+searchaction.php
+<?php
+	include("../dbconnect.php");    ----> path to database connection page.
+	$search = $_POST['search'];
+	$query = "SELECT field1, field2 FROM table1 WHERE field1 = '$search'";
+
+---- Display results
+
+	$data = mysql_query($query);
+	$num_records = mysql_num_rows($data);
+	
+	if($num_records == 0)    ---->two equal sign '==' to test for equality.
+	{
+		echo "No records found";
+	}
+	else
+	{
+		while($row = mysql_fetch_array($data, MYSQL_ASSOC))
+		{ 
+		  echo "<p>";
+		  echo $row['firstName'] ." ";
+	 	  echo $row['lastName'] ." ";
+	  	  echo $row['email'];
+	  	  echo "</p>";
+		}
+	}
+?>
+
+---------------------- Insert data into Table with PHP --------------------------
+<form method="post" action="insertaction.php"> 
+<p> 
+	<label for="firstname">First Name:</label>
+	<input type="text" name="firstName" id="firstName"/> 
+</p>
+<p>
+	<input type="submit" value="Add Record"/>
+</p>
+</form>
+
+----process the form----
+insertaction.php
+
+
+<?php
+include("../dbconnect.php");
+
+$firstName = $_POST['firstName'];
+
+$query = "INSERT INTO customers (firstName) VALUES ('$firstName')";
+$data = mysql_query($query);
+header("location: customers.php");   -----> function to redirect user to a page that displays the records in the table.
+
+?>
+
+---TROUBLESHOOT ERROR
+turn on more robust error messages. Consult the PHP documentation http://php.net/manual/en
+
+
+
+-------------------------------------------------------------------------------------------------------
+------------------------------------------- FIND A WEB HOST -------------------------------------------
+
+
+Shared Hosting: Site on the server with many other site
+Dedicated Hosting: Rent an entire server for our site.
+
+-----PUBLISH WEB USING FTP------
+Run->ftp->OK
+open ftp.zzzz.com
+enter
+type username
+enter
+type password
+enter
+. Logged in
+type hash
+enter
+lcd c:\wamp\www   ----> Path to folder in hard disks that contain web page file.
+type mput *.html    ----> Transfers all files with .html extenstion.
+enter
+type quit.
+enter.
+
+Other command in FTP:
+dir   ----> display list of the files
+cd <path>
+lcd <path> ----> change to specified directory in client/local.
+mkdir <dirname>
+hash ----> to show progress of a file upload or download
+get <filename> ----> Download a file on the server
+put <filename> ----> Upload
+mget <*.extension> ----> Download all file with specified extension
+mput <*.extension> ----> Upload
+? ----> Display list of accepted commands.
+
+
+
+-------------------------------------------------------------------------------------------------
+------------------------------------------META TAGS----------------------------------------------
+
+<meta name="keywords" content="tvy, heavy industries" />
+
+<meta name="description" content="tvy industries is a bla bla" />
+
+-------- Google Webmaster Tools ------
+
+www.google.com/webmasters/tools
+
+add a site
+
+verify site
+
+.
+
+Click Diagnostics
+
+Crawl Stats
+
+------------
+Create Sitemap ---> allow to tell the engine what pages on your site should be added to their index
+Written in XML.
+
+sitemap
+<?xml version="1.0" encoding="utf-8" ?>
+<urlset xmlns="www.sitemap.org/schemas/sitemap/0.9">
+
+	<url>
+		<loc>http://www.tvyindustries.com</loc>
+	</url>
+	<url>
+		<loc>http://www.tvyindustries.com/contact.html</loc>
+	</url> -----> additional set
+</urlset>
+
+
+----------
+Prevent pages from listed in Search engine
+
+robots.txt
+User-agent: *
+Disallow: /files/  -->path to directory in the site or spesific filename.
+Disallow: /media/
+Disallow: /images/
+
+Save in root folder
+
+
+--------------------------------------------------------------------------------------------------------------
+--------------------------------      FIXED / FLEXIBLE       -------------------------------------------
+
+Most desktop users: 1024x768
+Designers often use: fixed width 960 pixels.
+
+Using Grid----
+Provide CSS grid template:
+http://960.gs/
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------Color Scheme-----------------------------------------------------
+colorschemedesigner.com  ---> Pallete Online
+kuler.adobe.com
+
+Using Gradients generator:
+Use CSS to add simple gradients to your design with online generators to make code:
+www.colorzilla.com/gradient-editor
+www.cssmatic.com/gradient-generator
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------Menus and Navigation-----------------------------------------------------
+ICON
+Dryicons: www.dryicons.com 
+offers a wide range of free and paid icon sets in diverse style and colors.
+
+Adding favorite icon: 32x32 px. You can make one using the free program irfanview. (www.irfanview.com)
+
+Menamai: di root dengan favicon.ico   you dont need any code.
+	 if you want different favicons for different pages, using snippet for html.
+	   <html href="favicon.ico" rel="shortcut icon">
+
+Provide icon used if someone add web page to home screen: 152x152 px
+Root: apple-touch-icon.png / <link rel="apple-touch-icon" href="customIcon.png">
+
+
+
+Breadcrumb: Home > Books > Computing
+
+Process Map: Helps people to see their progress through the process.
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------ADDING A SHOPPING CART -----------------------------------------------------
+PayPal? (www.paypal.com)
+
+Selling digital product: music->iTunes, ebook-> Amazon's kindle.
+Selling design: www.cafepress.com, www.zazzle.com
+selling books and publish: www.lulu.com
+
+--SHOPPING CART SOFTWARE integrates with PayPal:
+OS Commerce: www.oscommerce.com
+Zen Cart : www.zen-cart.com
+
+To use it we need a hosting company that support PHP and MySQL.
+PayPal memberi daftar partner yang menawarkan shopping cart services.
+
+Cari shopping cart yang sesuai dengan apa yang dijual. Misal jualan musik, cari yang ada download button setelah pembayaran.
+
+PayPal juga menyediakan tools yang dapat digunakan untuk buat button untuk web kita.
+
+------------ CREATE CART BUTTON ON PAYPAL
+Create different "Add to Cart" button for each product.
+1. Login to PayPal account/register for business account.
+2. Go to PayPal button factory: www.paypal.com/buttonfactory
+3. Change button type: Shopping Cart.
+4. Type item name. We can also give it a unique ID.
+5. Enter price and currency.
+6. We can add a dropdown menu for selling variants of 1 product.
+7. Set ongkos kirim.
+8. Step 2 and 3
+9. Create button.
+
+we dont need any special hosting nor special software. It will work with any website. and secure connection.
+
+------------ ADDING CART BUTTON FROM PAYPAL
+
+1. Use the preview button.
+2. Click select code button. Copy.
+3. Open our web pages and Paste the code. 
+4. Create similar button, edit the setting to create next button.
+
+------------ ADDING VIEW-CART BUTTON FROM PAYPAL
+
+1. Click create a view-cart button after make add-cart button
+2. Customize the button.
+3. Click create button.
+4. Copy-paste code and add to our website.
+
+Consider making the view-cart button part of navbar or top-right.
+
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------ADDING A SEARCH ENGINE-----------------------------------------------------
+
+www.google.com/cse
+Put domain name, followed by /*
+Create button
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------ERROR MESSAGES-----------------------------------------------------
+
+-Create error page, use normal site template, provide links to home and popular pages. With full links such as http://www.examp.com/news.html, save as 404message.html
+-Create a text file: htaccess.txt, contain one line syntax: 
+	ErrorDocument 404 /404message.html
+-Upload htaccess.txt and 404message.html to the top level of the server.
+-Rename htaccess.txt to .htaccess in server
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------ SOCIAL DIMENSION --------------------------------------------------------
+keyword: social, twitter.
+
+Enable people to socialize on website.
+- We can add a DISCUSSION FORUM easily: 
+	phpBB is a free and open source forum that can incorporate into website. Php script.
+
+- Easy to install forum from BRAVENET (www.bravenet.com)
+	Just need to paste a line of javascript into website. 
+	we can also create mailing list, design the email to send to our subscribe list.
+
+
+INTEGRATING WITH FACEBOOK:
+add like button, recommendation, activity feed.
+	https://developers.facebook.com/docs/plugins
+	complete with domain name -> get the code
+
+--INTEGRATING WITH TWITTER:
+	https://twitter.com/about/resources/button
+   We can embed latest tweets in website, using widgets.
+	https://twitter.com/settings/widgets
+
+--ADD A "SHARE THIS" BUTTON
+	www.addthis.com  --> Get the Code. Sign Up if we'd like to enable analytics.
+
+--ADDING PHOTOS FROM FLICKR
+	http://www.flickr.com/badge.gne
+
+--ENABLE/ADD COMMENTS ON WEBSITE
+Dont need to have PHP or any special hosting.
+Using disqus. enable us to allow people discuss in our web. Also support CMS and others platforms.
+	www.disqus.com
+
+
+--------------------------------------RESPONSIVE WEB DESIGN------------------------------------------------
+Using W3.CSS Framework (built in responsiveness)
+To use just add link to "w3.css" in web pages.
+Source:w3schools.com/w3css
+
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+or 
+if you have downloaded.
+<link rel="stylesheet" href="w3.css">
+
+
+Built-in responsiveness example:
+w3-container  --> cover div, article, section, header, and footer elements class
+
+Responsive classes must reside inside a row to be fully responsive
+w3.css Grid
+w3-row
+   w3-col   s  m l
+	w3-half
+	w3-third
+	w3-quarter
+	w3-rest
+	 
+
+Color classes:
+Red, Blue, Blue Grey, Teal...
+
+Card Classes:
+w3-card, w3-card-2/4/8/12...
+
+Table:
+w3-table...
+
+Spin objects:
+w3-spin
+
+With W3.CSS you can use any icon library like:
+reference: http://www.w3schools.com/w3css/w3css_icons.asp
+
+•Font Awesome Icons --->   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+•Google Material Icons ---> <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+•Bootstrap Icons --->  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+Using Theme:
+example --->  <link rel="stylesheet" href="w3-theme-teal.css">
+
+&#9776; ---> Garis 3
+
+---------
+Using Bootstrap Framework (built in responsiveness)
+
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------ CMS (CONTENT MANAGEMENT SYSTEM) -----------------------------------------
+
+Popular CMS are: Wordpress, Joomla, Drupal.
+
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------ TESTING AND LAUNCHING -----------------------------------------
+It's a good idea to launch early and expand website gradually.
+Benefits: 
+- Google like to see sites that are growing with new content.
+- Search engines can starts indexing the early content, other sites starts linking, we can begin to build a rank in search engine.
+- etc.
+
+2 Types of testing:
+- Technical Testing: whether the site work as designed?
+- Usability Testing: easily used?
+
+
+Technical testing:
+- Form Fill?
+- Javascript/ Flash disabled?
+- Work in iPad/Games console? Older desktop browsers?
+- Fast enough? on Mobile Device?
+- All links and button works? Navbar looks right in every section?
+- Broken images?
+- Forum works as it shoulld? Shopping cart? Social networking integration?
+
+
+---Publish Sites by FTP
+require: FTP server address, username, password.
+
+- Open windows explorer
+- On top there is a bar that contain paths.
+- Click and type -> ftp://example.com -> Press enter.
+- Insert username and password.
+
+Dedicated FTP Programs:
+- FileZilla
+- AceFTP
+- CuteFTP
+or we can use web editors:
+- Dreamweaver
+- CoffeCup HTML
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------ PROMOTING WEBSITE -----------------------------------------
+keyword:seo, SEO, google, bing, yahoo.
+
+RESEARH KEY PHRASES:
+Google AdWord keyword planner shares some google's intelligence about the words and phrases that people use to search.
+GO TO: https://adwords.google.com/ko/KeywordPlanner/Home
+
+Google Insights for search:
+show the most popular search terms in different categories.
+www.google.co.uk/insights/search.
+
+-It might not be worth trying to compete on highly competition keyword.
+-Try to see what google recommend when we type in.
+-We might have different key word/phrases for different pages
+
+----WHERE TO PUT SEARCH TERMS
+1. HEADLINES <h1>
+2. Distribute throughout article --> use variation. Like sing, sung, sang, singing.
+3. Use search terms in link text. Applies even the link between two pages in our web.
+4. Put in the page title.  
+     <title> </title>
+5. Put in description (meta tag) use 20 words to encourage people to visit. Inside <head>
+    <meta name="Description" content="desc goes there">
+6. Keyword meta tag.  Inside <head>. <meta name="Keywords" content="keyword1, keyword2">
+7. Focus on creating great content.
+
+
+----TIPS GOOD SEO:
+1. Number of LINKS has coming into it. 
+	One way links is more important. Or exchange links also good. Don;t swap links to spammy sites.
+2. If we can make others link to us, try to make our SEARCH TERMS in the LINK TEXT.
+3. AVOID have DUPLICATE content, even in our web or from others web.
+4. Use DESCRIPTIVE NAMES for folders in the site and filename. Like "buy-cameras.html" --> try to use search terms there too.
+5. Consider having a SITEMAP page which links to every other page. Beware using flash/javascript for navigation.
+6. UPDATE site regularly. Google likes it. Having a blog can help.
+7. AVOID LONG WEB PAGES. Better have pages contain 400 words than 1 pages have 4000 words.
+
+A link from one web to another for GOOGLE is like an ENDORSEMENT. 
+
+IF we DON'T WANT to endorse, we have to put NOFOLLOW attribute in the LINK.
+	<a href="" rel="nofollow">LINK</a>
+
+---------------------------------------- SUBMIT YOUR WEBSITE ---------------------------------
+Search engine use programs called spiders to crawl the web. 
+If we have link coming in to our website. Search engine should able discover it manually.
+BUT, we can help them discover our website by SUBMITTING IT TO THEM directly.
+Then, the spiders will regularly revisit our web to see what new content.
+
+COMPLETE OUR SEO FIRST, THEN SUBMIT:
+
+GOOGLE	http://www.google.com/addurl/
+BING	http://www.bing.com/webmaster/SubmitSitePage.aspx
+
+Good idea to see whether there are any directories that cover our industry. For example, search for "dentist directory".
+These directories will sometimes provide one-way link to improve our SEO.
+
+This is one of INVESTMENT.
+
+DON'T REST ON SEO, RIVALS ALWAYS TRY TO KNOCK YOU.
+
+
+---- USING KEYWORD ADVERTISING
+You can pay to advertise using google Adwords
+	https://adwords.google.com
+
+PAY PER CLICK, ONLY PAY WHEN SOMEBODY CLICKS on your advert to visit your website. 
+
+--STEP:
+1. Research your keywords. 
+2. You create a campaign. 
+3. Create an ad group. Contain one or more adverts and set of related keyword
+4. Enter the keywords. 
+	we can exclude certain terms (use minus in fron of word), show exact matches of phrase (using square brackets).
+5. Set max Cost-per-Click
+6. Use the search traffic estimator to see how much the keyword and bid combination will cost you.
+7. Save campaign and it will go live.
+8. Refine (menyaring)  our campaign in line with the data. 
+
+We can pause a campaign.
+
+PPC Google Adwords have small risk. if nobody comes to web, we dont need to pay.
+
+
+BANNER ADVERTISING
+There is also CPM (Cost per Mile) which means we pay for 1000 people seeing the ad, even nobody visit it.
+
+
+--MORE PROMOTION TIPS
+1. Email-> short advert goes out with every email we send
+2. Incude website address on business card/letters/vans/carrier bags/receipts.
+3. Offline advertisement. Buy adverts in magazine, shop windows, or wherever potential.
+4. Newspaper and Magazine. Write a short press release include 5W of your website. emphasize benefit to visitor.
+5. Network. Participate in forums, social networks, blog commenting to connect with others who might like your web content. 
+6. Create affiliate program. Enable us to pay websites for sending paying customers (pays website a commision on any sales referred through a link)
+	like www.tradedoubler.com, www.linkshare.com, www.cj.com
+7. Syndicate your content. Enable other website to embed your content, but dont just copy paste.
+
+---===  The best link relationships come when somebody has a GENUINE DESIRE to recommend your website. (VIRAL) ===-
+			SO FOCUS ON CREATING GREAT CONTENT RATHER THAN BEGGING SOMEONE FOR LINKS
+
+
+BRINGING BACK VISITOR
+- Create an email newsletter
+    we can use www.verticalresponse.com
+- Use twitter
+	ask visitor to follow
+- Create souvenir
+	provide something that people will download and use. We could create discreetly branded images for use. Video/ Audio recording. App or ebook.
+- Use RSS
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------MEASURING SUCCESS-----------------------------------------------------
+keyword: visitor, sukses, report.
+
+2 ways:
+1. Using server logs
+2. Using Javascript Tags.
+
+1. Server logs: See the statistics from hosting. We can see what search engine spiders visit our site. How our bandwith is being used
+		We can control spiders that consuming more bandwith than we want using ROBOTS.TXT file. But take care for the configuration.
+		Software: AWStats (awstats.sourceforge.net) but it might be set up by the hosting company.
+
+2. Using Javascript: Web analytics solution can built using Javascript. Each web page has a small snippet code added to it. The code track the visitor
+		     But, it wont work where Javascript isn't supported. We have to add the TAG to every page on website.
+		     GOOGLE ANALYTICS is one of the most popular. (google.com/analytics)
+		     
+
+METRIC REPRESENTS:
+- Hits: Every file download is a hit. Example: 3 pict, 1 css. Will have 5 hit. But, it tells nothing about human behavior. 
+- Bandwith: Total size of all the the files you visitor downloaded. Including spiders automated download.  
+- Unique Visitors: Number of different people who visits your web. 
+- Number of Visits: The number of different occasions on which people visited your site.
+- Page/Page Views: Number of different web pages that were viewed.
+- Pages/Visit: Average number of pages viewed in a visit.
+- Average time on site: Measured in hours:minutes:second
+- Bounce Rate: Percentage of people who arrived at one page and left your site at the same page.
+- New Visits: Percentage of people visiting the site that analytics doesnt recognize from a previous visit.
+
+=====Other important metrics:=====
+- Number of email newsletter subscribers, RSS Subscribers, Registered member/ Twitter follower.
+- How many comments, and forum postings yourr site attracts. 
+
+Other analytics tools:
+-Statcounter (statcounter.com)
+-Sitemeter (sitemeter.com)
+
+these enable us to display a cumulative count of visitors to date on your web site. 
+
+
+If we use link shorten like bit.ly  ---> It will count aech time our link is clicked. 
+We can also use it as a measure of effectiveness of link placement.
+
+----------------- CREATE A SURVEY -------------------
+Find out how our visitor fell about our site?
+Use a quick survey from SURVEY MONKEY (www.surveymonkey.com)
+STEP:
+1. Create an account --> Create a survey --> Give it a dec. name --> Choose category --> Edit page add title and desc.
+2. Click add questions
+3. Collect responses --> Select options to add the survey to your website
+4. We can embed it or make a pop-up when somebody visit
+5. Copy the code provided
+
+
+ANALYTICS DATA IS A VALUABLE INFORMATION. BUT IF ONLY IF YOU USE IT. 
+
+
+KNOWING WHICH SITE WHICH SITES SEND YOU THE MOST VISITORS IS ALSO IMPORTANT. ESPECIALLY IF WE'VE PAID FOR ADVERTISEMENT.
+
+
+		     
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------OTHER TOOLS AND TEMPLATE-----------------------------------------------------
+Online service enable to build a website:
+www.moonfruit.com
+www.webs.com
+www.wix.com
+www.weebly.com
+
+Buy Template: templatemonster.com
+
+ECOMMERCE:
+Online Sales: XCART, Magento, e-junkie, wix
+
+
+FORM BUILDER: JOTFORM, WUFOO
+ONLINE EVENT Registration: EVENTBRITE
+CONNECT TO Customer: CONSTANT CONTACT
+INVOICING Product: INVEEZY
+ONLINE INVOICING, ACCOUNTING, AND BILLING SOFTWARE: FRESHBOOKS
+CUSTOMER SUPPORT AND AUTOMATED RECURRING BILLING: WHCMS
+
+
+--------------------------------------------------------------------------------------------------------------
+------------------------------------PORTFOLIO ONLINE-----------------------------------------------------
+Designer Coen Grift.
+www.bio-bak.nl
+
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+----------------------------------------ACCESIBILITY PRINCIPLES ----------------------------------------------
+
+1. Provide alternative text for anything that isn't text. Image/Video
+2. Make sure site still works when JavaScrip, Flash are switched off.
+3. Give user warned if they have to respond within a certain limit.
+4. Use clear and consisten navigation.
+5. Make sure website can be used with keyboard.
+6. Make it easy to skip straight to the content, if web page have a long list of links or header information.
+7. Don't open a pop up window/change window without warning.
+8. Use simplest language
+9. Give users control how they view the content
+10. Make sure any information conveyed by color can be understood in other ways.
+11. Make sure enough contrast between foreground and background. If open in black and white screen.
+12. Avoid overcomplicated layouts.
+13. Use accesibility features in HTML to help user navigate table and forms.
+14. Don't use picture of text unless its essential.
+
+Detailed guidance Web Content Accesibility Guideliness (www.w3.org/TR/WCAG20/) atau (www.section508.gov)
+Automated accesibility checkers online (http://wave.webaim.org) and (cynthiasays.com)
+
+
+Purpose of website:
+1. Build new relationships.
+2. Enhance your reputation and profile
+3. Sell
+4. Improve customer service
+5. Educate
+6. Entertain
+7. Create a community
+8. Create new services (like vistaprint.com) website content itself the product.
+9. Make money (placing advertising against website content, selling products)
+
+--------------------------------------------------------------------------------
+
+Google adsense: www.google.com/adsense. Enable us to host adverts on our website and get paid. Depend on how many click
+
+Success measure of web: number of customers, volume of sales, number of comments, subscribers, number people recommending your content on socmed. etc
+
+--------------------------------------------------------------------------------
+
+Adobe online photo editor: photoshop.com/tools
+
+--------------------------------------------------
+check availability: www.internic.net/whois.html
+
+
+
+
+
+
+
+REFERENCE: WEB Design in easy steps - Sean McManus - 6th Edition - 2014
+
+https://fortawesome.github.io/Font-Awesome/
+	
+
+

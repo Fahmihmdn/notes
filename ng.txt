@@ -1,0 +1,33 @@
+ng-app: defines AngularJS application.  ng-app="myApp"
+ng-model: binds value of HTML control (input, select, textarea)
+ng-controller: define controller use.
+ng-if: evaluates expression
+ng-repeat:  clones HTML elements
+	<div ng-app="" ng-init="names=[
+ 		{name:'Jani',country:'Norway'},
+ 		{name:'Hege',country:'Sweden'},
+ 		{name:'Kai',country:'Denmark'}]">
+
+		<ul>
+   			<li ng-repeat="x in names">
+     			{{ x.name + ', ' + x.country }}
+  			</li>
+		</ul>
+
+	</div> 
+
+ng-show:
+
+
+ng-bind
+ng-init :  ng-init="myCol='lightblue'"
+
+Create module: var app = angular.module("myApp", []); -->refers HTML which application will run. Now can create controller.
+			 
+Create controller:  app.controller("", function($scope) {
+
+});
+
+Put module and controllers in JS file: 
+	<script src="myApp.js"></script>
+	<script src="myCtrl.js"></script
